@@ -16,14 +16,22 @@ So the two rules for our version of Pig Latin are:
    the first vowel** to the **end of the word** then add 'ay'
 */
 
-function pigLatinWord(word) {
+function pigLatinWord(str) {
     // Your code here 
+    let strsub =["a", "e", "i", "o", "u"];
+    let word2 = str.toLowerCase();
+
+    if (strsub.includes(word2[0])){
+        return str+'yay';
+    }else {
+        return str+'ay';
+    }
 };
 
-// console.log(pigLatinWord("apple")); //=> "appleyay"
-// console.log(pigLatinWord("eat")); //=> "eatyay"
-// console.log(pigLatinWord("banana")); //=> "ananabay"
-// console.log(pigLatinWord("trash")); //=> "ashtray"
+console.log(pigLatinWord("apple")); //=> "appleyay"
+console.log(pigLatinWord("eat")); //=> "eatyay"
+console.log(pigLatinWord("banana")); //=> "ananabay"
+console.log(pigLatinWord("trash")); //=> "ashtray"
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 module.exports = pigLatinWord;

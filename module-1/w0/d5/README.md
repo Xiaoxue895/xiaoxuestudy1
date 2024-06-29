@@ -1,20 +1,11 @@
-# `Week 0 Day 5`
+# Basic Loops
 
-- Practice Session 1
-  - Basic Loops 10 - 15
-- Practice Session 2
-  - Basic Loops 15 - 20
-- Practice Session 3
-  - Control Flow Checkpoint
+Run `npm install` to install dependencies.
 
-## `Practice Session 1 - 1h`
+Implement all the problems in the __problems/__ folder.
 
-- Basic Loops problems 10 - 15
+Run `npm test` to test all your problems.
 
-## `Practice Session 2 - 1h`
-
-- Basic Loops problems 15 - 20
-
-## `Practice Session 3`
-
-- Control Flow Checkpoint
+To test a specific problem, run `npm test test/<name-of-problem-file>-spec.js`.
+For example, if the problem file is called `hello-world.js`, then run
+`npm test test/hello-world-spec.js` to test it.

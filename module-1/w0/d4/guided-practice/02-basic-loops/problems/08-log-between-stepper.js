@@ -10,8 +10,19 @@ return anything.
 */
 
 // Your code here 
+function logBetweenStepper(lowernum,uppernum,step){
+    for(let i = lowernum;i <= uppernum;i = i + step){
+        console.log(i);
+    }
+}
 
-// logBetweenStepper(5, 9, 1);
+
+
+
+
+
+logBetweenStepper(5, 9, 1);
+logBetweenStepper(5,20,5);
 /* prints out:
 5
 6
