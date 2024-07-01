@@ -8,10 +8,17 @@ removed from the array. See test cases for examples.
 
 // Your code here 
 
+function removeElements(arr,num1,num2){
+    if(num1>arr.length || num1 < 0){
+        return [];
+    }
+    arr.splice(num1,num2);
+    return arr;
+}
 
-// console.log(removeElements([1, 2, 3], 1, 1));       // [1, 3]
-// console.log(removeElements([1, 2, 3], 1, 2));       // [1]
-// console.log(removeElements([1, 2, 3], 0, 1));       // [2, 3]
+console.log(removeElements([1, 2, 3], 1, 1));       // [1, 3]
+console.log(removeElements([1, 2, 3], 1, 2));       // [1]
+console.log(removeElements([1, 2, 3], 0, 1));       // [2, 3]
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 module.exports = removeElements;

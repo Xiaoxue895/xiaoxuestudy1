@@ -6,13 +6,26 @@ should return false otherwise.
 
 // Your code here 
 
+function compareLengths(arr1,arr2){
+    let arr1Length = arr1.length;
+    let arr2Lehgth = arr2.length;
 
-// let a1 = ['a', 'b', 'c'];
-// let a2 = ['w', 'x', 'y'];
-// let a3 = [1, 3, 7, 4];
+    if (arr1Length !== arr2Lehgth){
+        return true;
+    }else{
+        return false;
+    }
+}
 
-// console.log(compareLengths(a1, a2)); // => false
-// console.log(compareLengths(a1, a3)); // => true
+
+
+
+let a1 = ['a', 'b', 'c'];
+let a2 = ['w', 'x', 'y'];
+let a3 = [1, 3, 7, 4];
+
+console.log(compareLengths(a1, a2)); // => false
+console.log(compareLengths(a1, a3)); // => true
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 module.exports = compareLengths;

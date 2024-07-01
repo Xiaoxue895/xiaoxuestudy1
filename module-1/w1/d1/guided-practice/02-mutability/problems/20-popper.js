@@ -7,14 +7,19 @@ that were removed.
 
 // Your code here 
 
+function popper(array,num){
+    let result = array.splice(-num,num);
+    return result;
+}
 
-// let arr1 = ['a', 'b', 'c', 'd', 'e'];
-// console.log(popper(arr1, 2)); // [ 'e', 'd' ]
-// console.log(arr1); // [ 'a', 'b', 'c' ]
 
-// let arr2 = ['kale', 'spinach', 'collard greens', 'cabbage'];
-// console.log(popper(arr2, 1)); // [ 'cabbage' ]
-// console.log(arr2); // [ 'kale', 'spinach', 'collard greens' ]
+let arr1 = ['a', 'b', 'c', 'd', 'e'];
+console.log(popper(arr1, 2)); // [ 'e', 'd' ]
+console.log(arr1); // [ 'a', 'b', 'c' ]
+
+let arr2 = ['kale', 'spinach', 'collard greens', 'cabbage'];
+console.log(popper(arr2, 1)); // [ 'cabbage' ]
+console.log(arr2); // [ 'kale', 'spinach', 'collard greens' ]
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 module.exports = popper;

@@ -7,12 +7,25 @@ element of the sequence.
 */
 
 // Your code here 
+function doubleSequence(num1,num2){
+    let result = [];
+    let newWord = num1;
 
-// console.log(doubleSequence(7, 3));  // [7, 14, 28]
-// console.log(doubleSequence(3, 5));  // [3, 6, 12, 24, 48]
-// console.log(doubleSequence(5, 3));  // [5, 10, 20]
-// console.log(doubleSequence(5, 4));  // [5, 10, 20, 40]
-// console.log(doubleSequence(5, 0));  // [ ]
+    for (let i = 1;i <=num2;i++){
+        result.push(newWord);
+        newWord = newWord*2;
+    }
+
+    return result;
+}
+
+
+
+console.log(doubleSequence(7, 3));  // [7, 14, 28]
+console.log(doubleSequence(3, 5));  // [3, 6, 12, 24, 48]
+console.log(doubleSequence(5, 3));  // [5, 10, 20]
+console.log(doubleSequence(5, 4));  // [5, 10, 20, 40]
+console.log(doubleSequence(5, 0));  // [ ]
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 module.exports = doubleSequence;

@@ -6,11 +6,20 @@ has the given number added to it.
 
 // Your code here 
 
+function additionMutator(arr,num){
 
-// let nums1 = [3, 7, 1, 2];
-// let nums2 = additionMutator(nums1, 4);
-// console.log(nums1);     // [ 7, 11, 5, 6 ]
-// console.log(nums1 === nums2) // true;
+    for (let i = 0;i<arr.length;i++){
+        arr[i]+=num;
+    }
+    return arr;
+
+}
+
+
+let nums1 = [3, 7, 1, 2];
+let nums2 = additionMutator(nums1, 4);
+console.log(nums2);     // [ 7, 11, 5, 6 ]
+console.log(nums1 === nums2) // true;
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 module.exports = additionMutator;

@@ -7,14 +7,21 @@ this using a loop.
 */
 
 // Your code here 
+function getIndexOf(arr,obj){
+    for (let i = 0;i<arr.length; i++){
+        if (arr[i]===obj){
+            return i;
+        }
+    }
+    return -1;
+}
 
-
-// console.log(getIndexOf(['a', 'b', 'c', 'e'], 'c')); // 2
-// console.log(getIndexOf(['a', 'b', 'c', 'e'], 'e')); // 3
-// console.log(getIndexOf(['a', 'b', 'c', 'e'], 'z')); // -1
-// console.log(getIndexOf([43, -7, 11, 13, 43], 43));  // 0
-// console.log(getIndexOf([43, -7, 11, 13], 1));       // -1
-// console.log(getIndexOf([], 3));                     // -1
+console.log(getIndexOf(['a', 'b', 'c', 'e'], 'c')); // 2
+console.log(getIndexOf(['a', 'b', 'c', 'e'], 'e')); // 3
+console.log(getIndexOf(['a', 'b', 'c', 'e'], 'z')); // -1
+console.log(getIndexOf([43, -7, 11, 13, 43], 43));  // 0
+console.log(getIndexOf([43, -7, 11, 13], 1));       // -1
+console.log(getIndexOf([], 3));                     // -1
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 module.exports = getIndexOf;

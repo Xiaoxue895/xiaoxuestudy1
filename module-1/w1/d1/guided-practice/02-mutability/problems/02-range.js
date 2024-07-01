@@ -10,9 +10,27 @@ an empty array.
 // Your code here 
 
 
-// console.log(range(3, 10));    // [ 3, 4, 5, 6, 7, 8, 9, 10 ]
-// console.log(range(217, 220)); // [ 217, 218, 219, 220 ]
-// console.log(range(10, 3));    // []
+function range(min,max){
+    let result = [];
+
+    if (min > max){
+        return result;
+    }
+
+    for (let i = min ; i<=max;i= i+1){
+        result.push(i);
+    }
+
+    return result;
+}
+
+
+
+
+
+console.log(range(3, 10));    // [ 3, 4, 5, 6, 7, 8, 9, 10 ]
+console.log(range(217, 220)); // [ 217, 218, 219, 220 ]
+console.log(range(10, 3));    // []
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 module.exports = range;
