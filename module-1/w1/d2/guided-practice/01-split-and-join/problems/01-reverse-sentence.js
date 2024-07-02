@@ -7,8 +7,15 @@ among characters.
 
 // Your code here 
 
-// console.log(reverseSentence('I am pretty hungry')); // 'hungry pretty am I'
-// console.log(reverseSentence('follow the yellow brick road')); // 'road brick yellow the follow'
+function reverseSentence(str){
+  let words = str.split(' ');
+  let reversedWords = words.reverse();
+  let result = reversedWords.join(' ');
+  return result;
+}
+
+console.log(reverseSentence('I am pretty hungry')); // 'hungry pretty am I'
+console.log(reverseSentence('follow the yellow brick road')); // 'road brick yellow the follow'
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 module.exports = reverseSentence;
