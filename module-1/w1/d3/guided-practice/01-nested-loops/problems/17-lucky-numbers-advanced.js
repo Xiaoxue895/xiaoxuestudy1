@@ -6,18 +6,42 @@ minimum element in its row and the maximum in its column.
 
 
 // Your code here 
+function luckyNumbers(matrix){
+    let result =[];
+    let jlength = matrix[0].length;
 
-// matrix = [[ 5,  9, 21],
-//           [ 9, 19,  6],
-//           [12, 14, 15]]
+    for(let i = 0;i<matrix.length;i++){
+        let j = 0;
+        let middleresult = [matrix[i][0]];
 
-// console.log(luckyNumbers(matrix)); // [12]
+        for(let j = 1; j <jlength;j++){
+            if(matrix[i][j]<middleresult[0]){
+                middleresult[0] = matrix[i][j];
+            }
+        }
+        result.push(middleresult[0]);
+    }
 
-// matrix = [[ 5, 10,  8,  6],
-//           [10,  2,  7,  9],
-//           [21, 15, 19, 10]]
+    let num1 = Math.max(...result);
+    let srr = [num1];
+    return srr;
 
-// console.log(luckyNumbers(matrix)); // [10]
+}
+
+
+
+
+matrix = [[ 5,  9, 21],
+       [ 9, 19,  6],
+          [12, 14, 15]]
+
+console.log(luckyNumbers(matrix)); // [12]
+
+matrix = [[ 5, 10,  8,  6],
+     [10,  2,  7,  9],
+       [21, 15, 19, 10]]
+
+console.log(luckyNumbers(matrix)); // [10]
 
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/

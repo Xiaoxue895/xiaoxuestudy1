@@ -15,8 +15,33 @@ For example, given 2, 3, 7, 5, 9 as the base, we should construct this pyramid:
 
 // Your code here 
 
-// let p1 = pyramidArray([2, 3, 7, 5, 9]);
-// console.log(p1);
+function pyramidArray(arr){
+  let result = [arr.slice()];
+
+  while (arr.length > 1) {
+    let middlearray = [];
+
+    for (let i = 0; i <arr.length-1;i++){
+      middlearray.push(arr[i]+arr[i+1]);
+
+    }
+    result.unshift(middlearray);
+
+    arr = middlearray.slice();
+    }  
+
+    return result;
+
+}
+
+
+
+
+
+
+
+let p1 = pyramidArray([2, 3, 7, 5, 9]);
+console.log(p1);
 /*
 [
   [ 85 ],
@@ -27,8 +52,8 @@ For example, given 2, 3, 7, 5, 9 as the base, we should construct this pyramid:
 ]
 */
 
-// let p2 = pyramidArray([2, 2, 2, 2]);
-// console.log(p2);
+let p2 = pyramidArray([2, 2, 2, 2]);
+ console.log(p2);
 /*
 [
   [ 16 ],

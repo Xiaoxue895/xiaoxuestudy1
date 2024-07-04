@@ -7,15 +7,31 @@ each of its elements is the max value in a column.
 
 function maxColumn(matrix) {
   // Your code here 
+  let result = [];
+  let numColumns = matrix[0].length;
+  
+  
+  
+  for (let j = 0; j < numColumns;j++){
+    let max = -Infinity;
+
+    for(let i = 0;i < matrix.length;i++){
+      if (matrix[i][j]> max){
+        max = matrix[i][j];
+      }
+    }
+   result.push(max);
+  }
+  return result;
 }
 
-// matrix = [
-//   [5, 9, 21],
-//   [9, 19, 6],
-//   [12, 14, 15],
-// ];
+ matrix = [
+ [5, 9, 21],
+ [9, 19, 6],
+ [12, 14, 15],
+];
 
-// console.log(maxColumn(matrix)); // [12, 19, 21]
+console.log(maxColumn(matrix)); // [12, 19, 21]
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 module.exports = maxColumn;

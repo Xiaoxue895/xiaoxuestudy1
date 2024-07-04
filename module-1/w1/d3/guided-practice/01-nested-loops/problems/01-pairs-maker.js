@@ -6,7 +6,22 @@ element from the input array.
 
 // Your code here 
 
-// console.log(pairsMaker(["a", "b", "c", "d"]));
+let pairsMaker = function(arr){
+    let result = [];
+
+    for (let i = 0;i< arr.length;i++){
+        for(let j = i + 1 ; j <arr.length;j++){
+            if ( i !== j){
+                result.push([arr[i],arr[j]]);
+            }
+        }
+    }
+
+    return result;
+}
+
+
+console.log(pairsMaker(["a", "b", "c", "d"]));
 // //=> [ [ 'a', 'b' ],
 // //     [ 'a', 'c' ],
 // //     [ 'a', 'd' ],
@@ -14,7 +29,7 @@ element from the input array.
 // //     [ 'b', 'd' ],
 // //     [ 'c', 'd' ] ]
 
-// console.log(pairsMaker(["Rosemary", "Alex", "Connor"]));
+console.log(pairsMaker(["Rosemary", "Alex", "Connor"]));
 // //=> [ [ 'Rosemary', 'Alex' ],
 // //   [ 'Rosemary', 'Connor' ],
 // //   [ 'Alex', 'Connor' ] ]

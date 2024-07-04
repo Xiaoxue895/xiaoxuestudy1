@@ -9,35 +9,58 @@ To add matrices, we add the values at the same positions.
 
 // Your code here 
 
-// let matrixA = [
-//   [2, 5],
-//   [4, 7],
-// ];
-// let matrixB = [
-//   [9, 1],
-//   [3, 0],
-// ];
+function matrixAddition(matrices1,matrices2){
+    let result = [];
+    let mlength = matrices1[0].length;
 
-// let matrixC = [
-//   [-1, 0],
-//   [0, -1],
-// ];
-// let matrixD = [
-//   [2, -5],
-//   [7, 10],
-//   [0, 1],
-// ];
+    for(let i = 0; i<matrices1.length;i++){
+        let middlResult =[];
 
-// let matrixE = [
-//   [0, 0],
-//   [12, 4],
-//   [6, 3],
-// ];
+        for(let j = 0; j< mlength;j++){
+            middlResult.push(matrices1[i][j]+matrices2[i][j])
+        }
 
-// console.log(matrixAddition(matrixA, matrixB)); // [[11, 6], [7, 7]]
-// console.log(matrixAddition(matrixA, matrixC)); // [[1, 5], [4, 6]]
-// console.log(matrixAddition(matrixB, matrixC)); // [[8, 1], [3, -1]]
-// console.log(matrixAddition(matrixD, matrixE)); // [[2, -5], [19, 14], [6, 4]]
+        result.push(middlResult);
+    }
+
+    return result;
+}
+
+
+
+
+
+
+
+let matrixA = [
+ [2, 5],
+ [4, 7],
+ ];
+let matrixB = [
+ [9, 1],
+  [3, 0],
+ ];
+
+let matrixC = [
+ [-1, 0],
+ [0, -1],
+];
+let matrixD = [
+ [2, -5],
+ [7, 10],
+ [0, 1],
+ ];
+
+let matrixE = [
+  [0, 0],
+ [12, 4],
+ [6, 3],
+];
+
+console.log(matrixAddition(matrixA, matrixB)); // [[11, 6], [7, 7]]
+console.log(matrixAddition(matrixA, matrixC)); // [[1, 5], [4, 6]]
+ console.log(matrixAddition(matrixB, matrixC)); // [[8, 1], [3, -1]]
+console.log(matrixAddition(matrixD, matrixE)); // [[2, -5], [19, 14], [6, 4]]
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 module.exports = matrixAddition;

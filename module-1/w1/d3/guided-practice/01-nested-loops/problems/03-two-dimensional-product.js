@@ -5,18 +5,33 @@ numbers multiplied together.
 */
 
 // Your code here 
+let twoDimensionalProduct = function(arr){
+    let result = 1;
+    
+    if (arr.length === 0){
+        return 0;
+    }
 
-// let arr1 = [[6, 4], [5], [3, 1]];
-// console.log(twoDimensionalProduct(arr1)); // 360
+    for (let i = 0; i < arr.length; i ++){
+        for (let j = 0; j <arr[i].length;j++){
+            result *= arr[i][j];
+        }
+    }
 
-// let arr2 = [[11, 4], [2]];
-// console.log(twoDimensionalProduct(arr2)); // 88
+    return result;
+}
 
-// let arr3 = [
-//   [-9, 8, 4],
-//   [8, 2],
-// ];
-// console.log(twoDimensionalProduct(arr3)); // -4608
+let arr1 = [[6, 4], [5], [3, 1]];
+console.log(twoDimensionalProduct(arr1)); // 360
+
+let arr2 = [[11, 4], [2]];
+console.log(twoDimensionalProduct(arr2)); // 88
+
+let arr3 = [
+[-9, 8, 4],
+ [8, 2],
+];
+console.log(twoDimensionalProduct(arr3)); // -4608
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 module.exports = twoDimensionalProduct;

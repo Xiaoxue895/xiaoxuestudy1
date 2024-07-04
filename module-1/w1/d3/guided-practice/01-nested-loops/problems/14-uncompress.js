@@ -10,9 +10,26 @@ into the number type. For example. Number("4") // => 4
 
 // Your code here 
 
-// console.log(uncompress("x3y4z2"));   // 'xxxyyyyzz'
-// console.log(uncompress("a5b2c4z1")); // 'aaaaabbccccz'
-// console.log(uncompress("b1o2t1"));   // 'boot'
+function uncompress(str){
+    let result = '';
+
+    for (let i = 0;i <str.length; i++){
+        let char = str[i];
+        if(i % 2 === 0){
+            let timep = parseInt(str[i+1]);
+            for(let j = 0;j <timep;j++){
+                result += char;
+            }
+            
+        }
+    }
+    return result;
+}
+
+
+console.log(uncompress("x3y4z2"));   // 'xxxyyyyzz'
+console.log(uncompress("a5b2c4z1")); // 'aaaaabbccccz'
+console.log(uncompress("b1o2t1"));   // 'boot'
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 module.exports = uncompress;

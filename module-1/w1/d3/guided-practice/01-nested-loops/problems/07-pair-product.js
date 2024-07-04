@@ -7,14 +7,31 @@ You may assume that the input array contains unique elements.
 */
 
 // Your code here 
+let pairProduct = function(arr,num){
+    let result = [];
 
-// console.log(pairProduct([4, 2, 5, 8], 16));    // true
-// console.log(pairProduct([8, 1, 9, 3], 8));     // true
-// console.log(pairProduct([3, 4], 12));          // true
-// console.log(pairProduct([3, 4, 6, 2, 5], 12)); // true
-// console.log(pairProduct([4, 2, 5, 7], 16));    // false
-// console.log(pairProduct([8, 4, 9, 3], 8));     // false
-// console.log(pairProduct([3], 12));             // false
+    for (let i = 0;i < arr.length;i ++){
+        let num1 = arr[i];
+
+        for(let j = i + 1; j <arr.length;j ++){
+            let num2 = arr[j];
+            result.push(num1*num2);
+        }
+    }
+
+    if (result.includes(num)){
+        return true;
+    }else{
+        return false;
+    }
+}
+console.log(pairProduct([4, 2, 5, 8], 16));    // true
+console.log(pairProduct([8, 1, 9, 3], 8));     // true
+console.log(pairProduct([3, 4], 12));          // true
+console.log(pairProduct([3, 4, 6, 2, 5], 12)); // true
+console.log(pairProduct([4, 2, 5, 7], 16));    // false
+console.log(pairProduct([8, 4, 9, 3], 8));     // false
+console.log(pairProduct([3], 12));             // false
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 module.exports = pairProduct;
