@@ -9,13 +9,40 @@ returned. Use the isPrime function as a helper function.
 */
 
 // Your code here 
+function isPrime(num1){
+  let result = []
 
-// console.log(prevPrime(32)); // 31
-// console.log(prevPrime(33)); // 31
-// console.log(prevPrime(14)); // 13
-// console.log(prevPrime(7)); // 5
-// console.log(prevPrime(4)); // 3
-// console.log(prevPrime(2)); // null
+  for(let i = 1;i<= num1;i++){
+      if(num1 % i === 0){
+          result.push(i);
+      }
+  }
+
+  if(result.length === 2){
+      return true;
+  }else{
+      return false;
+  }
+}
+
+function prevPrime(num2){
+    let next = num2 - 1;
+    
+    if(num2 === 2){
+      return null;
+    }
+
+    while(!(isPrime(next))){
+      next--;
+    }
+    return next;
+}
+console.log(prevPrime(32)); // 31
+console.log(prevPrime(33)); // 31
+console.log(prevPrime(14)); // 13
+console.log(prevPrime(7)); // 5
+console.log(prevPrime(4)); // 3
+console.log(prevPrime(2)); // null
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 module.exports = {

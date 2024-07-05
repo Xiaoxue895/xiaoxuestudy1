@@ -8,14 +8,41 @@ divide the given number evenly. Use the isPrime function as a helper function.
 */
 
 // Your code here 
+function isPrime(num){
+  let result = []
 
-// console.log(primeFactors(12)); // [2, 3]
-// console.log(primeFactors(7)); // [7]
-// console.log(primeFactors(16)); // [2]
-// console.log(primeFactors(30)); // [2, 3, 5]
-// console.log(primeFactors(35)); // [5, 7]
-// console.log(primeFactors(49)); // [7]
-// console.log(primeFactors(128)); // [2]
+  for(let i = 1;i<= num;i++){
+      if(num % i === 0){
+          result.push(i);
+      }
+  }
+
+  if(result.length === 2){
+      return true;
+  }else{
+      return false;
+  }
+}
+
+function primeFactors(num2){
+  let result2 = [];
+  
+  for(let j = 1; j <= num2; j++){
+    if(num2 % j === 0 && isPrime(j)){
+      result2.push(j)
+    }
+  }
+  return result2;
+}
+
+
+console.log(primeFactors(12)); // [2, 3]
+console.log(primeFactors(7)); // [7]
+console.log(primeFactors(16)); // [2]
+console.log(primeFactors(30)); // [2, 3, 5]
+console.log(primeFactors(35)); // [5, 7]
+console.log(primeFactors(49)); // [7]
+console.log(primeFactors(128)); // [2]
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 module.exports = {

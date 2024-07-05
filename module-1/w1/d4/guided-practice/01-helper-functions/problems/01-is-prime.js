@@ -10,12 +10,27 @@ and 2 (10 / 5 = 2 and 10 / 1 = 10).
 */
 
 // Your code here 
+function isPrime(num){
+    let result = []
 
-// console.log(isPrime(2)); // => true
-// console.log(isPrime(10)); // => false
-// console.log(isPrime(11)); // => true
-// console.log(isPrime(9)); // => false
-// console.log(isPrime(2017)); // => true
+    for(let i = 1;i<= num;i++){
+        if(num % i === 0){
+            result.push(i);
+        }
+    }
+
+    if(result.length === 2){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+console.log(isPrime(2)); // => true
+console.log(isPrime(10)); // => false
+console.log(isPrime(11)); // => true
+console.log(isPrime(9)); // => false
+console.log(isPrime(2017)); // => true
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 module.exports = isPrime;
