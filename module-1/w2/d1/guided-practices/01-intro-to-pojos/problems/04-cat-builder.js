@@ -7,11 +7,20 @@ arguments passed in.
 
 // Your code here 
 
-// console.log(catBuilder("Whiskers", "black", ["scratching-post", "yarn"]));
-// //=> { name: 'Whiskers', color: 'black', toys: ['scratching-post', 'yarn'] }
+function catBuilder(name,color,toys){
+  let cat = {};
 
-// console.log(catBuilder("Nyan", "rainbow", ["poptarts"]));
-// //=> { name: 'Nyan', color: 'rainbow', toys: [ 'poptarts' ] }
+  cat.name = name;
+  cat.color = color;
+  cat.toys = toys;
+
+  return cat;
+}
+console.log(catBuilder("Whiskers", "black", ["scratching-post", "yarn"]));
+//=> { name: 'Whiskers', color: 'black', toys: ['scratching-post', 'yarn'] }
+
+console.log(catBuilder("Nyan", "rainbow", ["poptarts"]));
+//=> { name: 'Nyan', color: 'rainbow', toys: [ 'poptarts' ] }
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 
