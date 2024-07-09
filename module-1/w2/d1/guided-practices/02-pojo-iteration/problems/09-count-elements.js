@@ -6,11 +6,24 @@ the elements show up in the string as values.
 
 function countElements(arr) {
   // Your code here 
+  let result = {};
+
+  for (let elements of arr){
+
+    if(result[elements]){
+      result[elements]++;
+    }else{
+      result[elements] = 1;
+    }
+  }
+
+  return result;
+
 }
 
-// console.log(countElements(
-//   ['app', 1, 2, 'app', 2, 2]
-// )); // => { app: 2, 1: 1, 2: 3 }
+console.log(countElements(
+  ['app', 1, 2, 'app', 2, 2]
+)); // => { app: 2, 1: 1, 2: 3 }
 
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/

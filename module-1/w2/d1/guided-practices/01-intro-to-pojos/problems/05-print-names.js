@@ -4,11 +4,18 @@ loop through all of the objects and print the "name" key from each object.
 */
 
 // Your code here 
-function printNames(arrayofobj){
-  for (let obj of arrayofobj){
-    if(obj.hasOwnProperty('name')){
-      console.log(obj.name);
-    }
+// function printNames(arrayofobj){
+//   for (let obj of arrayofobj){
+//     if(obj.hasOwnProperty('name')){
+//       console.log(obj.name);
+//     }
+//   }
+// }
+
+function printNames(names){
+  for(let i = 0;i<names.length;i++){
+    let nameonj = names[i];
+    console.log(nameonj['name'])
   }
 }
 

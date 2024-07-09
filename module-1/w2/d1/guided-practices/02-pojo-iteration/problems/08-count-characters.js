@@ -6,9 +6,21 @@ the characters show up in the string as values.
 
 function countCharacters(str) {
   // Your code here 
+  let result = {};
+
+  for (let char of str){
+
+    if(result[char]){
+      result[char]++;
+    }else{
+      result[char] = 1;
+    }
+  }
+
+  return result;
 }
 
-// console.log(countCharacters('hello')); // => { h: 1, e: 1, l: 2, o: 1}
+console.log(countCharacters('hello')); // => { h: 1, e: 1, l: 2, o: 1}
 
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/

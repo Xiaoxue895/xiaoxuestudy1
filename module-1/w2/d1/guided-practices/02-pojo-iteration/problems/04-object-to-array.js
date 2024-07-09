@@ -6,14 +6,24 @@ the value.
 */
 
 // Your code here 
+function objectToArray(obj){
+  let result = [];
 
-// let bootcamp = {
-//   name: "App Academy",
-//   color: "Red",
-//   population: 120
-// };
-// console.log(objectToArray(bootcamp));
-// //=> [['name', 'App Academy'], ['color', 'Red'], ['population', 120]]
+  for(let key in obj){
+    let value = obj[key];
+    result.push([key,value]);
+  }
+
+  return result;
+}
+
+let bootcamp = {
+  name: "App Academy",
+  color: "Red",
+  population: 120
+};
+console.log(objectToArray(bootcamp));
+//=> [['name', 'App Academy'], ['color', 'Red'], ['population', 120]]
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 

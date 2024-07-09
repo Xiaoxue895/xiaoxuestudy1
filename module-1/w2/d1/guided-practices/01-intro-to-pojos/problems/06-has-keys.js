@@ -6,8 +6,8 @@ the object.
 
 // Your code here 
 function hasKeys(obj,arr){
-  for(let key of arr){
-    if(!(key in obj)){
+  for(let str of arr){
+    if(obj[str] === undefined){
       return false;
     }
   }
