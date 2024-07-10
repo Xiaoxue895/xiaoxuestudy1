@@ -4,6 +4,15 @@ method.
 */
 
 // Your code here 
+let myEvery = function(arr, cb) {
+  for (let i = 0; i < arr.length; i++) {
+    if (!cb(arr[i], i, arr)) {
+      return false; // Return false as soon as one element fails the condition
+    }
+  }
+  return true; // Return true if all elements pass the condition
+};
+
 
 const friends = [
   {

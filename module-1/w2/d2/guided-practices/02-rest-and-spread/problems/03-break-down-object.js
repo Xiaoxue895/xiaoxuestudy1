@@ -7,13 +7,28 @@ values of the object.
 */
 
 // Your code here 
+let breakDownObj = function(obj){
+  let key1 = [];
+  let value1 = [];
 
-// console.log(breakDownObj(
-//   { name: 'Rupert', age: 5, speak: 'Meow' }
-// )); // => [ 'name', 'age', 'speak', 'Rupert', 5, 'Meow' ]
-// console.log(breakDownObj(
-//   { location: 'NY', borough: 'Brooklyn' }
-// )); // => [ 'location', 'borough', 'NY', 'Brooklyn' ]
+  for(let key in obj){
+    key1.push(key);
+    value1.push(obj[key]);
+  }
+
+  let result = [...key1,...value1];
+  return result;
+
+}
+
+
+
+console.log(breakDownObj(
+  { name: 'Rupert', age: 5, speak: 'Meow' }
+)); // => [ 'name', 'age', 'speak', 'Rupert', 5, 'Meow' ]
+console.log(breakDownObj(
+  { location: 'NY', borough: 'Brooklyn' }
+)); // => [ 'location', 'borough', 'NY', 'Brooklyn' ]
 
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/

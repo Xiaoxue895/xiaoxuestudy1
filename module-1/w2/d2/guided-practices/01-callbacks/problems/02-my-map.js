@@ -4,6 +4,15 @@ method.
 */
 
 // Your code here 
+let myMap = function(arr,cb){
+  let result = [];
+
+  for(let i = 0;i < arr.length; i++){
+    let res = cb(arr[i],i,arr);
+    result.push(res);
+  }
+  return result;
+}
 
 const friends = [
   {

@@ -30,9 +30,18 @@ let result3 = mySimpleReduce([4, 6, 2, 8, 3], function(max, el) {
 console.log(result3); // 8
 *******************************************************************************/
 
-function mySimpleReduce(array, cb) {
+function mySimpleReduce(arr, cb) {
   // Your code here 
+  let acc = arr[0];
+
+    for (let i = 1; i < arr.length; i++) {
+        let el = arr[i];
+        acc = cb(acc, el);
+    }
+
+    return acc;
 }
+
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {

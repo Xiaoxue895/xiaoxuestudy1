@@ -12,12 +12,17 @@ const obj = {
 }
 
 // Your code here 
+let [...arrRest] = arr;
+let arrSpread = [...arr];
 
-// console.log(arrRest);   // [1, "two", "3"]
-// console.log(arrSpread); // [1, "two", "3"]
+let {...objRest} = obj;
+let objSpread = {...obj};
 
-// console.log(objRest);   // { red: "circle", blue: "square", green: "hexagon" }
-// console.log(objSpread); // { red: "circle", blue: "square", green: "hexagon" }
+console.log(arrRest);   // [1, "two", "3"]
+console.log(arrSpread); // [1, "two", "3"]
+
+console.log(objRest);   // { red: "circle", blue: "square", green: "hexagon" }
+console.log(objSpread); // { red: "circle", blue: "square", green: "hexagon" }
 
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/

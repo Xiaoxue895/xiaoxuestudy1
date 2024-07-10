@@ -4,6 +4,11 @@ method.
 */
 
 // Your code here 
+function myForEach(array,callbacks){
+  for(let i = 0; i < array.length; i++){
+    callbacks(array[i],i,array);
+  }
+}
 
 const friends = [
   {
