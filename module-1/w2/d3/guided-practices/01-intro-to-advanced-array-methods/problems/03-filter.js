@@ -25,9 +25,11 @@ const friends = [
 ];
 
 
-const filteredFriends;
+const filteredFriends = friends.filter(function(friend){
+  return friend.yearsOfFriendship >= 6 && friend.name.startsWith('A')
+})
 
-// console.log(filteredFriends); // [ { name: "Agatha", yearsOfFriendship: 6 } ]
+console.log(filteredFriends); // [ { name: "Agatha", yearsOfFriendship: 6 } ]
 
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/

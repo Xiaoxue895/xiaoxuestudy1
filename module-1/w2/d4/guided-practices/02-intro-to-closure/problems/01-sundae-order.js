@@ -10,9 +10,12 @@ Look at the example test cases to see how this function is invoked:
 
 function sundaeOrder() {
   // Your code here 
+  let result = "A bowl of ice cream with hot fudge"
 
   return function (topping) {
     // Your code here 
+    result = result + ' and ' + topping;
+    return result;
   };
 }
 

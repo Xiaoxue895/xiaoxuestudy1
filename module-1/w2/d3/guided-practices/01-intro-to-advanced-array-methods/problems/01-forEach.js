@@ -26,6 +26,9 @@ const friends = [
 ];
 
 // Your code here 
+friends.forEach(function(friend){
+  console.log(friend.name+':'+ friend.yearsOfFriendship +'years');
+});
 
 /*
 Should print:

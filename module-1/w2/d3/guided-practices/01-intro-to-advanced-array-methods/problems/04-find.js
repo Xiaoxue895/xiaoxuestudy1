@@ -24,9 +24,24 @@ const friends = [
 ];
 
 // Hint: create an array of vowels to use in your solution.
-const threeVowelFriend;
+function countvowels(word){
+  let vowels = ["a","e","i","o","u"];
+  let newWord = word.toLowerCase();
+  let count = 0;
 
-// console.log(threeVowelFriend); // [ { name: 'Angela', yearsOfFriendship: 2 } ]
+  for(let char of newWord){
+    if(vowels.includes(char)){
+      count++;
+    }
+  }
+  return count;
+}
+
+const threeVowelFriend = friends.find(function(friend){
+  return countvowels(friend.name) >= 3;
+})
+
+console.log(threeVowelFriend); // [ { name: 'Angela', yearsOfFriendship: 2 } ]
 
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/

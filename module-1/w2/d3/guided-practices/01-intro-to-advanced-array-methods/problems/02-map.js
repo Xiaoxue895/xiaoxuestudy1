@@ -24,9 +24,11 @@ const friends = [
   }
 ];
 
-const goodFriendsOrNot;
+const goodFriendsOrNot = friends.map(function(friend){
+  return friend.yearsOfFriendship >=6;
+});
 
-// console.log(goodFriendsOrNot);          // [false, false, true, true]
+console.log(goodFriendsOrNot);          // [false, false, true, true]
 
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
