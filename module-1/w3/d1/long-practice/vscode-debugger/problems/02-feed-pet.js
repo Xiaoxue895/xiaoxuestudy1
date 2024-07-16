@@ -8,9 +8,15 @@ of foods that you have fed that pet.
 */
 
 function feedPet(name) {
-  const foods = [];
+  let name1 = name;
+  let fedLog = '';
+
   return (food) => {
-    return "Fed " + name + " " + foods.push(food) + ".";
+    if(fedLog){
+      fedLog += ', ';
+    }
+    fedLog += food; 
+    return `Fed ${name1} ${fedLog}.`; 
   }
 }
 
