@@ -14,8 +14,23 @@ flatten([1, [2, [3]]]); // [1, 2, 3]
 
 function flatten(arr) {
   // Your code here 
-}
+  if(arr.length === 0){
+    return [];
+  }
   
+  const[first,...rest]= arr;
+
+  if(Array.isArray(first)){
+    return [...flatten(first),...(flatten(rest))];
+  }else{
+    return [first,...(flatten(rest))];
+  }
+
+}
+ 
+console.log(flatten([])); // []
+flatten([1, 2]); // [1, 2]
+console.log(flatten([1, [2, [3]]])); // [1, 2, 3]
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 module.exports = flatten;
   

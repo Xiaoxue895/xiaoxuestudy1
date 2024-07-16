@@ -15,9 +15,19 @@ reverse(""); // ""
 
 function reverse(str) {
   // Your code here 
+  if(str === ''){
+    return ''
+  }
+
+  return reverse(str.slice(1)) + str[0]
 }
 
-
+reverse("house"); // "esuoh"
+reverse("dog"); // "god"
+reverse("atom"); // "mota"
+reverse("q"); // "q"
+reverse("id"); // "di"
+reverse(""); // ""
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = reverse;
