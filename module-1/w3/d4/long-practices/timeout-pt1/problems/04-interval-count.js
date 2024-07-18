@@ -18,14 +18,16 @@ intervalCount(function() {
 
 function intervalCount(cb, delay, amount) {
   // Your code here 
-  let amountn = 0;
-  let timerObj = setInterval(() =>{
+  let count = 0;
+  const timerObj = setInterval(() => {
     cb();
-    amountn++;
-    if(amountn === amount) {
+    count++;
+    if (amount !== undefined && count === amount) {
       clearInterval(timerObj);
     }
-  },delay);
+  }, delay);
+
+  return timerObj;
 }
 
 intervalCount(function() {
