@@ -18,8 +18,19 @@ intervalCount(function() {
 
 function intervalCount(cb, delay, amount) {
   // Your code here 
+  let amountn = 0;
+  let timerObj = setInterval(() =>{
+    cb();
+    amountn++;
+    if(amountn === amount) {
+      clearInterval(timerObj);
+    }
+  },delay);
 }
 
+intervalCount(function() {
+  console.log('hi');
+}, 500, 3);
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
   module.exports = intervalCount;

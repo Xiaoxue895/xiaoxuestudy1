@@ -24,7 +24,13 @@ setSecondsTimeoutArgs(function(arg1, arg2) {
 
 function setSecondsTimeoutArgs(cb, delayInSeconds, ...args) {
   // Your code here 
+  const delay = delayInSeconds *1000;
+  setTimeout(cb,delay,...args);
 }
+
+setSecondsTimeoutArgs(function(arg1, arg2) {
+  console.log(arg1 + '-' + arg2);
+}, 0.7, 'hello', 'world'); 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {

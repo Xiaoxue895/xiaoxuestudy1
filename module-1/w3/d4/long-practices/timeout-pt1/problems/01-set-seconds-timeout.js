@@ -25,8 +25,13 @@ setSecondsTimeout(function () {
 
 function setSecondsTimeout(cb, delayInSeconds) {
   // Your code here 
+  const delayInMilliseconds = delayInSeconds * 1000;
+  setTimeout(cb, delayInMilliseconds);
 }
 
+setSecondsTimeout(function () {
+  console.log('world');
+}, 1.4); 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
   module.exports = setSecondsTimeout;
