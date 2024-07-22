@@ -26,19 +26,57 @@ let ties = 0;
 /***************************** HELPER FUNCTIONS ******************************/
 function printHelp() {
   // Your code here 
+  console.log("  Type 'r' for Rock");
+  console.log("  Type 'p' for Paper");
+  console.log("  Type 's' for Scissors");
+  console.log("  Type 'q' to quit");
+  console.log("  Type 'h' for a list of valid commands\n");
 }
 
 function getWinner(move1, move2) {
   // Your code here 
+  let moveorder = {
+    'r':'s',
+    's':'p',
+    'p':'r'
+  }
+
+  if(move1 === move2){
+    return 0;
+  }
+
+  if(moveorder[move1] === move2){
+    return 1;
+  }else{
+    return -1;
+  }
 }
 
 function getCPUMove() {
   // Your code here 
+  let choose = ['r','s','p'];
+
+  let chooseIndex = Math.floor(Math.random()* choose.length)
+
+  return choose[chooseIndex];
 }
 
 function processMove(cmd, cpu) {
   // Your code here 
+
+    console.log(`You pick ${cmd}, computer picks ${cpu}.`);
+
+    let result = getWinner(cmd, cpu);
+
+    if (result === 0) {
+      console.log("You tie.\n");
+    } else if (result === 1) {
+      console.log("You win!\n");
+    } else if (result === -1) {
+      console.log("You lose...\n");
+    }
 }
+ 
 
 /******************************* MAIN FUNCTION *******************************/
 function promptInput(rl) {
