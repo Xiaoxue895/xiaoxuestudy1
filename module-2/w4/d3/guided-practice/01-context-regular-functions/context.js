@@ -7,6 +7,7 @@ class Fish {
     this.name = name;
   }
 
+
   swim() {
     console.log(`${this.name} swimming in the water`);
   }
@@ -29,7 +30,7 @@ const nemo = new Fish('Nemo');
 
 
 /********************************* Scenario 4 *********************************/
-// nemo.swim(); // ?
+nemo.swim(); // ?
 
 
 /********************************* Scenario 5 *********************************/

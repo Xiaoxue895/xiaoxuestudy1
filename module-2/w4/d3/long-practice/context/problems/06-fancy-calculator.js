@@ -1,5 +1,39 @@
 // Your code here 
 
+const Calculator = require('./calculator');
+
+class FancyCalculator extends Calculator{
+
+	setTotal(newTotal){
+		this.total = newTotal;
+		return this.total;
+	}
+
+	modulo(num){
+		if (num === 0) {
+			throw new Error('Cannot divide by zero');
+		  }
+		  this.total %= num;
+		  return this.total;
+
+	}
+
+	squared() {
+		this.total *= this.total;
+		return this.total;
+	  }
+
+}
+
+let fancyCalculator = new FancyCalculator();
+console.log(fancyCalculator.setTotal(5)); // => 5
+console.log(fancyCalculator.squared());   // => 25
+console.log(fancyCalculator.modulo(4));   // => 1
+console.log(fancyCalculator.total)        // => 1
+
+// can use instance methods on the Calculator class
+console.log(fancyCalculator.add(9))       // => 10
+
 /*****************************************************************************/
 /***************** DO NOT MODIFY ANYTHING UNDER THIS LINE ********************/
 
