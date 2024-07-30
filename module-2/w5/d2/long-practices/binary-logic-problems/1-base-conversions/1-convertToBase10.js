@@ -4,6 +4,14 @@
 
 const convertToBase10 = str => {
   // Your code here 
+  if(str.startsWith('0b')){
+    let str1 = str.slice(2);
+    return parseInt(str1,2);
+  }else if(str.startsWith('0x')){
+    let str2 = str.slice(2);
+    return parseInt(str2,16);
+
+  }
 };
 
 /******************************************************************************/

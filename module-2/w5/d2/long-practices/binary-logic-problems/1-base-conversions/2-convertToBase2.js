@@ -4,6 +4,12 @@
 
 const convertToBase2 = element => {
   // Your code here 
+  if(typeof element === 'number'){
+    return '0b' + element.toString(2);
+  }else{
+    let middleres = parseInt(element);
+    return '0b' + middleres.toString(2);
+  }
 };
 
 /******************************************************************************/
