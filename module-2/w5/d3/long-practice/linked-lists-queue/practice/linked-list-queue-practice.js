@@ -8,8 +8,9 @@ class SinglyLinkedNode {
 }
 
 class SinglyLinkedList {
-    constructor(head = null) {
+    constructor(head) {
         this.head = head;
+        this.length = 1;
     }
 
     addToTail(val) {
@@ -26,6 +27,7 @@ class SinglyLinkedList {
         }
 
         curr.next = newNode;
+        this.length++;
         return this.head;
     }
 
@@ -34,6 +36,8 @@ class SinglyLinkedList {
         // Implement in O(n) and in O(1) time complexity
 
         // Your code here 
+        return this.length;
+
     }
 
     sumOfNodes() {
