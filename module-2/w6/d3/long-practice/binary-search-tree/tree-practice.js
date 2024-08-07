@@ -6,34 +6,127 @@ const { BinarySearchTree, TreeNode } = require('./binary-search-tree.js');
 
 function findMinBST (rootNode) {
   // Your code here 
+  if (!rootNode) return null;
+  let current = rootNode;
+  while (current.left) {
+    current = current.left;
+  }
+  return current.val;
 }
 
 function findMaxBST (rootNode) {
   // Your code here 
+  if (!rootNode) return null;
+  let current = rootNode;
+  while (current.right) {
+    current = current.right;
+  }
+  return current.val;
 }
 
 function findMinBT (rootNode) {
   // Your code here 
+  if (!rootNode) return null;
+  let min = rootNode.val;
+  const queue = [rootNode];
+  while (queue.length) {
+    const node = queue.shift();
+    if (node.val < min) min = node.val;
+    if (node.left) queue.push(node.left);
+    if (node.right) queue.push(node.right);
+  }
+  return min;
 }
 
 function findMaxBT (rootNode) {
   // Your code here 
+  if (!rootNode) return null;
+  let max = rootNode.val;
+  const queue = [rootNode];
+  while (queue.length) {
+    const node = queue.shift();
+    if (node.val > max) max = node.val;
+    if (node.left) queue.push(node.left);
+    if (node.right) queue.push(node.right);
+  }
+  return max;
 }
 
 function getHeight (rootNode) {
   // Your code here 
+  if (!rootNode) return -1;
+  const leftHeight = getHeight(rootNode.left);
+  const rightHeight = getHeight(rootNode.right);
+  return Math.max(leftHeight, rightHeight) + 1;
 }
 
 function balancedTree (rootNode) {
-  // Your code here 
+  // Your code here
+  // function checkBalance(node) {
+  //   if (!node) return 0; // 
+
+  //   const leftHeight = getHeight(node.left); 
+  //   const rightHeight = getHeight(node.right); 
+
+  //   if (Math.abs(leftHeight - rightHeight) > 1) return -1; 
+
+  //   return Math.max(leftHeight, rightHeight) + 1; 
+  // }
+
+  // return checkBalance(rootNode) !== -1; 
+  function checkBalance(node) {
+    if (!node) return 0; 
+
+    const leftHeight = checkBalance(node.left); 
+    if (leftHeight === -1) return -1; 
+
+    const rightHeight = checkBalance(node.right); 
+    if (rightHeight === -1) return -1; 
+
+    if (Math.abs(leftHeight - rightHeight) > 1) return -1; 
+
+    return Math.max(leftHeight, rightHeight) + 1; 
+  }
+
+  return checkBalance(rootNode) !== -1; 
+
 }
 
 function countNodes (rootNode) {
-  // Your code here 
+  // Your code here
+
+  if (!rootNode) return 0; 
+
+  const leftCount = countNodes(rootNode.left); 
+  const rightCount = countNodes(rootNode.right); 
+
+  return 1 + leftCount + rightCount; 
+  
 }
 
 function getParentNode (rootNode, target) {
   // Your code here 
+  if (!rootNode) return undefined;
+
+  if (rootNode.val === target) return null;
+
+  const queue = [rootNode];
+
+  while (queue.length > 0) {
+    const node = queue.shift();
+
+    if (node.left && node.left.val === target) {
+      return node;
+    }
+    if (node.right && node.right.val === target) {
+      return node;
+    }
+
+    if (node.left) queue.push(node.left);
+    if (node.right) queue.push(node.right);
+  }
+
+  return undefined;
 }
 
 function inOrderPredecessor (rootNode, target) {
