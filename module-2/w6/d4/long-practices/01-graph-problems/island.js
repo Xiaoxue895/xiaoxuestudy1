@@ -1,17 +1,52 @@
 function getNeighbors(row, col, graph) {
+  const neighbors = [];
 
-  // Check top
+  // Check Up
+  if (row - 1 >= 0 && graph[row - 1][col] === 1) {
+    neighbors.push([row - 1, col]);
+  }
 
-  // Check bottom
+  // 检查下方
+  if (row + 1 < graph.length && graph[row + 1][col] === 1) {
+    neighbors.push([row + 1, col]);
+  }
 
-  // Check left
+  // 检查左方
+  if (col - 1 >= 0 && graph[row][col - 1] === 1) {
+    neighbors.push([row, col - 1]);
+  }
 
-  // Check right
+  // 检查右方
+  if (col + 1 < graph[row].length && graph[row][col + 1] === 1) {
+    neighbors.push([row, col + 1]);
+  
+  }
+  
+  return neighbors;
 
-  // Return neighbors
+}
 
   // Your code here 
-}
+
+  // const neighbors = [];
+  // const directions = [
+  //     [-1, 0], // Up
+  //     [1, 0],  // Down
+  //     [0, -1], // Left
+  //     [0, 1]   // Right
+  // ];
+
+  // for (const [dr, dc] of directions) {
+  //     const newRow = row + dr;
+  //     const newCol = col + dc;
+
+  //     if (newRow >= 0 && newRow < graph.length && newCol >= 0 && newCol < graph[0].length && graph[newRow][newCol] === 1) {
+  //         neighbors.push([newRow, newCol]);
+  //     }
+  // }
+
+  // return neighbors;
+
 
 
 function islandSize(row, col, graph) {

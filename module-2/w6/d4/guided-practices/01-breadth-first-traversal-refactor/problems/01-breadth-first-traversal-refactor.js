@@ -18,6 +18,29 @@ const adjList = {
 
 function breadthFirstTraversal(start) {
   // Your code here 
+  const checkSet = new Set();
+  const queue = [start];
+  const result = [];
+
+  while(queue.length > 0){
+    let cnode = queue.shift();
+
+    if(checkSet.has(cnode)){
+      continue;
+    }
+
+    checkSet.add(cnode);
+    result.push(cnode);
+
+    for(let nei of adjList[cnode]){
+      if(!checkSet.has(nei)){
+        queue.push(nei)
+      }
+    }
+
+  }
+  return result;
+
 }
 
 // console.log(breadthFirstTraversal(3)); // [3, 2, 4, 1, 5, 6]

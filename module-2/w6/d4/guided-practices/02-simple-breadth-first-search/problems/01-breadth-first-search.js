@@ -17,6 +17,32 @@ const adjList = {
 
 function breadthFirstSearch(start, end) {
   // Your code here 
+      // Create a queue and add the starting node to the queue
+      let queue = [start];
+      // Create a set to keep track of visited nodes
+      let visited = new Set();
+  
+      while (queue.length > 0) {
+          let node = queue.shift();
+
+          if (node === end) {
+              return true;
+          }
+  
+          if (!visited.has(node)) {
+              visited.add(node);
+  
+
+              for (let neighbor of adjList[node]) {
+
+                  if (!visited.has(neighbor)) {
+                      queue.push(neighbor);
+                  }
+              }
+          }
+      }
+
+      return false;
 }
 
 // console.log(breadthFirstSearch(1, 3)); // -> true

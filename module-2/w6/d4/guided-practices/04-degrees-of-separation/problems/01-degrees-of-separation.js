@@ -24,6 +24,26 @@ const adjList = {
 }
 
 function degreesOfSeparation(start, end) {
+  let queue = [[start, 0]];
+  let visited = new Set();
+
+  while (queue.length > 0) {
+      let [node, level] = queue.shift();
+
+      if (node === end) {
+          return level;
+      }
+
+      if (!visited.has(node)) {
+          visited.add(node);
+
+          for (let neighbor of adjList[node]) {
+              queue.push([neighbor, level + 1]);
+          }
+      }
+  }
+
+  return null;
 }
 
 // console.log(degreesOfSeparation(1, 3)); // -> 2
