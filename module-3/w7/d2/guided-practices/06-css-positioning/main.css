@@ -18,32 +18,32 @@ html, body {
 #yellow-box {
     background-color: #ffff00;
     /*/* Fill these in */
-    position: ;
+    position: static;
     bottom: 0;
     left: 0;
     right: 0;
     top: 0;
-    z-index: ;
+    z-index: 1;
 }
 
 #pink-box {
-    background-color: #ff69b4;
+    background-color: #c7a5b6;
     /*/* Fill these in */
-    position: ;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    position: relative;
+    bottom: 10;
+    left: 10;
+    right: 10;
     top: 0;
-    z-index: ;
+    z-index: 3;
 }
 
 #blue-box {
     background-color: #00eeee;
     /*/* Fill these in */
-    position: ;
+    position: absolute;
     bottom: 0;
-    left: 0;
-    right: 0;
+    left: 10px;
+    right: 10px;
     top: 0;
     z-index: ;
 }
@@ -51,7 +51,7 @@ html, body {
 #red-box {
     background-color: #ff0000;
     /*/* Fill these in */
-    position: ;
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
