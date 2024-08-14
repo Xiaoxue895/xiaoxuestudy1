@@ -24,3 +24,58 @@
 }
 
 /* Your code here */
+@media (max-width: 599px) {
+    .photo-card {
+        padding: 0.5rem 1rem 1rem 1rem;
+        margin: 0 0 5px 0;
+    }
+
+    .photo-card img {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* 当屏幕宽度在 600px 到 899px 之间时的布局 */
+@media (min-width: 600px) and (max-width: 899px) {
+    .photo-card {
+        padding: 0.5rem 1.5rem 1rem 1.5rem;
+    }
+
+    .photo-card img {
+        width: 150px; /* 缩略图大小 */
+        height: auto;
+    }
+}
+
+/* 当屏幕宽度在 900px 到 1199px 之间时的布局 */
+@media (min-width: 900px) and (max-width: 1199px) {
+    .photo-card {
+        padding: 0.5rem 2rem 1.5rem 2rem;
+    }
+
+    .photo-card img {
+        width: 300px; /* 图片最大宽度 */
+        height: auto;
+    }
+}
+
+/* 当屏幕宽度大于 1200px 时的布局 */
+@media (min-width: 1200px) {
+    .photo-card {
+        padding: 0.5rem 2rem 1.5rem 2rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .photo-card img {
+        width: 300px; /* 图片最大宽度 */
+        height: auto;
+    }
+
+    .photo-card p {
+        text-align: left;
+    }
+}

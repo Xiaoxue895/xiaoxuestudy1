@@ -45,6 +45,7 @@ nav a {
 }
 nav a:hover {
     background-color: #0D47A1;
+    text-decoration: underline;
 }
 nav a.selected {
     background-color: #0D47A1;
@@ -52,4 +53,54 @@ nav a.selected {
     cursor: default;
 }
 
-/* Your code here */
+@media print {
+    nav {
+        display: none;
+    }
+    img {
+        width: 100%;
+        height: auto;
+    }
+    .title {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #000;
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .credit {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #000;
+        font-size: 18px;
+        text-align: center;
+    }
+    body {
+        background-color: #fff;
+        margin: 0;
+    }
+    .back-button {
+        display: none;
+    }
+    .wikimedia-link {
+        display: none;
+    }
+}
+
+@media (max-height: 639px) {
+    header.homepage {
+        height: 220px; 
+        margin: 0; 
+    }
+}
+
+@media (max-width: 767px) {
+    nav a {
+        text-decoration: underline;
+    }
+}

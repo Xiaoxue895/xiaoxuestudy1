@@ -7,7 +7,10 @@
 
     /* Phase 1 */
 
-    /* Your code here 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
 .example2 {
@@ -17,7 +20,13 @@
 
     /* Phase 2 */
 
-    /* Your code here 
+    /* Your code here */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+
+
 }
 
 .example2 > button {
@@ -46,13 +55,26 @@
 
     /* Phase 3 */
 
-    /* Your code here 
+    /* Your code here */
+    flex: 1;
+    min-width: 0;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    
 }
 
 .example4 {
     /* Phase 4 - Part 1 of 2 */
 
-    /* Your code here 
+    /* Your code here */
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 16px;
 }
 
 .sidebar {
@@ -61,7 +83,14 @@
 
     /* Phase 4 - Part 2 of 2 */
 
-    /* Your code here 
+    /* Your code here */
+    display: flex;
+    flex:0 0 250px;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #f0f0f0;
+    padding: 16px;
+    box-sizing: border-box;
 }
 .content-area {
     background-color: #E8EFF0;
