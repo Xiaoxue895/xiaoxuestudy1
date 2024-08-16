@@ -1,1 +1,110 @@
 /* Your code here */
+.fa-newspaper {
+    height: 14px;
+    width: 14px;
+}
+
+ .masthead {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3,auto); 
+    grid-template-areas:
+        "menu . actionbutt"
+        ". tech ."
+        "date logo paper"; 
+}
+
+.masthead__actions{
+    display: flex;
+    grid-area: actionbutt;
+    padding: 10px 0;
+    justify-content: flex-end;
+
+
+}
+
+.masthead__date{
+    grid-area: date;
+    align-items: flex-end;
+    border-bottom: 1px solid #e2e2e2;
+    border-top: 1px solid #e2e2e2;
+    
+    display: flex;
+    font-size: 11px;
+    padding-bottom: 11px;
+
+}
+
+.masthead__icon-button {
+    font-size: 11px;
+    padding: 7px 9px;
+    position: relative;
+  }
+  
+.masthead__icon-button:hover {
+    background-color: #f7f7f5;
+}
+
+.masthead__logo{
+
+    border-bottom: 1px solid #e2e2e2; 
+    border-top: 1px solid #e2e2e2;
+
+    grid-area: logo;
+
+
+    padding-bottom: 11px; 
+    padding-top: 11px; 
+
+    text-align: center;
+}
+
+.masthead__menu-and-search {
+    grid-area: menu;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.masthead__paper{
+    border-bottom: 1px solid #e2e2e2;
+    border-top: 1px solid #e2e2e2;
+
+    display: flex;
+    align-items: flex-end;
+
+    justify-content: flex-end;
+    font-size: 11px;
+
+    grid-area: paper;
+
+    padding-bottom: 11px;
+
+
+}
+
+.masthead__technologies{
+    display: flex;
+    grid-area: tech; 
+
+    justify-content: center;
+    text-align: center;
+
+}
+
+.masthead__technology {
+    margin: 0 4px;
+  }
+
+  .masthead__technology-list {
+    background-color: white;
+
+    border-left: 1px solid #e2e2e2;
+    border-right: 1px solid #e2e2e2;
+    border-top: 1px solid #e2e2e2;
+    color: #6f6f6f;
+    font-size: 10px;
+    position: relative;
+    text-transform: uppercase;
+    top: 1px;
+  }

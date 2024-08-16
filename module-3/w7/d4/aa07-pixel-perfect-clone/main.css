@@ -1,0 +1,122 @@
+body {
+    display: flex;
+    flex-direction: column;
+
+}
+
+/* 这一段是希望给网页加一个背景图，谷歌来的资料 */
+
+body {
+    background-image: url('https://s.panlai.com/upload/2023/11/bizhihui_com_20231109210555169953515539539.jpg-arthumbs'); /* 设置背景图像 */
+    background-size: cover; /* 使图像覆盖整个背景区域 */
+    background-position: center; /* 将图像居中对齐 */
+    background-repeat: no-repeat; /* 避免图像重复 */
+    background-attachment: fixed; /* 固定背景图像，滚动页面时图像保持在视口中 */
+    margin: 0; /* 移除默认的 margin */
+    padding: 0; /* 移除默认的 padding */
+    height: 100vh; /* 使 body 高度占满整个视口 */
+    box-sizing: border-box; /* 包含 padding 和 border 在内的总高度 */
+    
+}
+
+
+
+.nav-container{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.right-nav {
+    display: flex;
+    align-items: center; 
+    justify-self: end; 
+    margin: 2px;
+}
+
+
+
+h2 {
+    color: black;
+   
+}
+
+h3{
+    color:blue;
+}
+
+p{
+    color:purple;
+
+    font-family: 'Times New Roman', Times, serif;
+    margin: 5%;
+    padding: 10px;
+
+}
+
+.image-gallery {
+    display: flex;
+    gap:20px;
+    justify-content: center;
+
+}
+
+.image-gallery img {
+    width: calc(33.333% - 20px) ;/* 设置图片宽度 */
+    height: auto; /* 高度自动调整 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+    border-radius: 8px; /* 添加圆角 */
+
+    transform: transform 2s ease;
+    cursor:pointer;
+}
+
+.image-gallery img:hover{
+    transform: scale(1.5);
+    z-index: 1;
+}
+
+@media (max-width: 600px) {
+    .image-gallery {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .image-gallery img {
+        width: 80%; 
+        margin-bottom: 20px; 
+    }
+
+}
+
+
+ul{
+    display: flex;
+    list-style-type: none;
+
+    justify-content: center;
+    align-items: flex-end;
+
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+
+}
+
+li{
+    margin-right: 30px;
+}
+
+ul li a {
+    color: white;
+    text-decoration: none; 
+}
+
+ul li a:hover {
+    color: blue;
+    font-size: 1.2em; 
+}
+
+ul li a:visited {
+    color: darkblue;
+}
+
