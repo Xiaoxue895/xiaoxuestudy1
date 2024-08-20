@@ -89,6 +89,24 @@ const server = http.createServer((req, res) => {
     // Phase 1: GET /dogs
     if (req.method === 'GET' && req.url === '/dogs') {
       // Your code here 
+
+      fs.readFile('./views/dogs.html', 'utf-8', (err, htmlPage) => {
+        if (err) {
+          res.statusCode = 500;
+          res.end("Internal Server Error");
+          return;
+        }
+      
+        const dogsListHtml = dogs.map(dog => `<li>${dog.name}</li>`).join('');
+        const resBody = htmlPage.replace("#{dogsList}", `<ul>${dogsListHtml}</ul>`);
+      
+        res.statusCode = 200;
+        res.setHeader("Content-Type", "text/html");
+        res.write(resBody);
+        res.end();
+      });
+    
+
     }
 
     // Phase 2: GET /dogs/new
