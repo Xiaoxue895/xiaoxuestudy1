@@ -11,6 +11,25 @@ Paste your code for fetch requests here once you finish each task.
 
 // Your code here 
 
+fetch('/posts', {
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json'
+  }
+})
+.then(response => {
+  console.log('Status Code:', response.status);
+  console.log('Headers:', response.headers);
+  return response.json();
+})
+.then(data => {
+  console.log('Body:', data);
+})
+.catch(error => {
+  console.error('Error:', error);
+});
+
+
 
 
 /* =============================== Phase 2 ================================ */
@@ -20,4 +39,27 @@ Paste your code for fetch requests here once you finish each task.
 */
 
 // Your code here 
+
+fetch('/posts', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    title: 'New Post',
+    content: 'This is the content of the new post.'
+  })
+})
+.then(response => {
+  console.log('Status Code:', response.status);
+  console.log('Headers:', response.headers);
+  return response.json();
+})
+.then(data => {
+  console.log('Body:', data);
+})
+.catch(error => {
+  console.error('Error:', error);
+});
+
 
