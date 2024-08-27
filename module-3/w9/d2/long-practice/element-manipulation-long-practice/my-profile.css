@@ -1,0 +1,36 @@
+/* 设置 h1 的样式 */
+.name {
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* 设置 ul 的样式 */
+.my-details {
+    border: 2px solid #333;
+    padding: 10px;
+    list-style-type: none;
+    max-width: 300px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+/* 设置 li 的样式 */
+.detail {
+    padding: 5px;
+    margin: 5px 0;
+}
+
+/* 设置 li 的 hover 效果 */
+.detail:hover {
+    background-color: #f0f0f0;
+}
+
+/* 设置时钟的样式 */
+#clock {
+    font-size: 24px;
+    text-align: center;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+}
