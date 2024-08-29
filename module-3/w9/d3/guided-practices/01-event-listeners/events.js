@@ -2,7 +2,7 @@
 // basic first part
 window.addEventListener('DOMContentLoaded',()=>{
     alert('the dom has loaded');
-});
+});// this two can change to the end of this page
 
 // basic second part
 
@@ -69,6 +69,49 @@ removelisteners.addEventListener('click',(e)=>{
     colorselect.removeEventListener('change',changecolor);
 
 })
+
+// BONUS TASKS:
+  // 6. Re-add the removed event listeners when a specific button is clicked
+
+  const reAddListenersButton = document.createElement("button");
+  reAddListenersButton.innerText = "Re-add Listeners";
+  document.body.appendChild(reAddListenersButton);
+  
+  const reAddAllListeners = () => {
+    redInput.addEventListener('input',changetoRed);
+    additem.addEventListener('click',addli);
+    colorselect.addEventListener('change',changecolor);
+  };
+  reAddListenersButton.addEventListener("click", reAddAllListeners);
+
+  // 7. Create a new section with a hover event
+  const section5 = document.createElement("section");
+  section5.id = "section-5";
+  
+  const hoverDiv = document.createElement("div");
+  hoverDiv.innerText = "Hover over me!";
+  hoverDiv.style.border = "1px solid black";
+  hoverDiv.style.padding = "10px";
+  
+  section5.appendChild(hoverDiv);
+  document.body.appendChild(section5);
+
+  hoverDiv.addEventListener("mouseenter", () => {
+    hoverDiv.innerText = "You are hovering over me!";
+  });
+
+  hoverDiv.addEventListener("mouseleave", () => {
+    hoverDiv.innerText = "Hover over me!";
+  });
+
+  // 8. Create a global event listener for the space bar
+  const handleSpaceBar = (e) => {
+    if (e.code === "Space") {
+      alert("Space bar was pressed!");
+    }
+  };
+  window.addEventListener("keydown", handleSpaceBar);
+
 
 
 
