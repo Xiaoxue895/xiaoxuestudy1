@@ -12,6 +12,7 @@ app.get('/hello', (req, res) => {
 app.get('/goodbye', (req, res) => {
     res.send("Goodbye, my friend!");
 });
+//delete something
 
 app.get('/goodbye/until/tomorrow', (req, res) => {
     res.send('Have a nice day! See you tomorrow.');
