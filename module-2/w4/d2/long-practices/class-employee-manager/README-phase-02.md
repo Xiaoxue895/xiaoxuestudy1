@@ -7,7 +7,8 @@ With your `Employee` module behaving as expected you can now move on to your
 
 In this phase you will create a `Manager` class that inherits from the 
 `Employee` class you just made. Run the test specs using 
-`npm test test/02-create-manager-spec.js`. Once the specs pass, use the local 
+`
+`. Once the specs pass, use the local 
 tests provided below to see your app in action.
 
 Begin by creating a __manager.js__ file and requiring your `Employee` module. 

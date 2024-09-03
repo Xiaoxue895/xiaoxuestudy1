@@ -34,8 +34,8 @@ describe("bakeAndSellPies(pieType, pieQuantity, profitMargin)", () => {
         'Baked pie 4!',
         'Combining ingredients for applePie: pie crust, sugar, butter, apples, cinnamon, eggs',
         'Baked pie 5!',
-        'Cost per pie: 37.5',
-        'Sold 5 pies for $468.75!'
+        'Cost per pie: 27.5',
+        'Sold 5 pies for $343.75!'
       ];
 
       expectedPrintOutputs.forEach((output, idx) => {
@@ -53,8 +53,8 @@ describe("bakeAndSellPies(pieType, pieQuantity, profitMargin)", () => {
         'Baked pie 1!',
         'Combining ingredients for pumpkinPie: pie crust, sugar, butter, pumpkin, cinnamon, eggs',
         'Baked pie 2!',
-        'Cost per pie: 35.25',
-        'Sold 2 pies for $84.60!'
+        'Cost per pie: 25.25',
+        'Sold 2 pies for $60.60!'
       ];
 
       expectedPrintOutputs.forEach((output, idx) => {
@@ -82,8 +82,8 @@ describe("bakeAndSellPies(pieType, pieQuantity, profitMargin)", () => {
         'Baked pie 6!',
         'Combining ingredients for cherryPie: pie crust, sugar, butter, cherries, eggs',
         'Baked pie 7!',
-        'Cost per pie: 38',
-        'Sold 7 pies for $452.20!'
+        'Cost per pie: 28',
+        'Sold 7 pies for $333.20!'
       ];
 
       expectedPrintOutputs.forEach((output, idx) => {

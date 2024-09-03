@@ -1,18 +1,66 @@
 function findNeighbors(node, matrix) {
-    // Up
-
-    // Down
-
-    // Left
-
-    // Right
-
     // Your code here 
+    let neighbors = [];
+    let row = node[0];
+    let col = node[1];
+  
+    // Up
+    if (row - 1 >= 0) {
+      neighbors.push([row - 1, col]);
+    }
+  
+    // Down
+    if (row + 1 < matrix.length) {
+      neighbors.push([row + 1, col]);
+    }
+  
+    // Left
+    if (col - 1 >= 0) {
+      neighbors.push([row, col - 1]);
+    }
+  
+    // Right
+    if (col + 1 < matrix[row].length) {
+      neighbors.push([row, col + 1]);
+    }
+    // Your code here
+    return neighbors;
 }
 
 
 function bfsPath(matrix, startNode, endValue) {
     // Your code here 
+    let queue = [startNode];
+    let visited = new Set( [  `${startNode[0]},${startNode[1]}` ] ); // `0,0`
+  
+    let path = [];
+  
+    while (queue.length) {
+      let currentNode = queue.shift();
+  
+      path.push(currentNode);
+  
+      const [row, col] = currentNode;
+      // console.log(matrix[row][col]);
+  
+      if (matrix[row][col] === endValue) {
+        return path;
+      }
+  
+      let neighbors = findNeighbors(currentNode, matrix); // [[0,1], [1,0]];
+  
+      neighbors.forEach((neighbor) => {
+        let stringCoords = `${neighbor[0]},${neighbor[1]}`;
+  
+        if (!visited.has(stringCoords)) {
+          queue.push(neighbor);
+          visited.add(stringCoords);
+        }
+      });
+    }
+  
+    return false;
+  
 }
 
 

@@ -1,3 +1,6 @@
-module.exports = function reverseString(string) {
-  // Your code here 
-};
+// problem/reverse-string.js
+function reverseString(str) {
+  return str.split('').reverse().join('');
+}
+
+module.exports = reverseString;
