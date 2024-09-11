@@ -1,0 +1,39 @@
+今天的第一件事是: adding **Sequelize** to an **Express** server
+  在这一步首先安装了所有必要的包
+  sqlite3 是 SQLite 数据库的 Node.js 客户端。SQLite 是一种轻量级的关系型数据库，适用于小型应用和开发阶段的测试。sqlite3 包允许 Node.js 应用程序与 SQLite 数据库进行交互。
+  npm install -D sqlite3
+
+  dotenv 是一个用于加载 .env 文件中的环境变量到 process.env 的库。它可以帮助你将敏感配置（如数据库连接字符串）和应用程序设置从代码中分离出来。
+  npm install dotenv
+
+  dotenv-cli 是 dotenv 的命令行工具，用于在命令行中加载环境变量。这在执行脚本和测试时特别有用，可以确保环境变量被正确加载。
+  npm install -D dotenv-cli
+
+  sequelize 是一个基于 Promise 的 Node.js ORM，用于处理关系型数据库（如 MySQL、PostgreSQL、SQLite 和 Microsoft SQL Server）。它允许你使用 JavaScript 对象来操作数据库记录，而不是直接编写 SQL 查询。
+  npm install sequelize
+
+  sequelize-cli 是 Sequelize 的命令行工具，提供了用于生成模型、迁移、种子数据等功能的命令。它帮助你更方便地管理数据库模式和数据。
+  npm install sequelize-cli
+
+总结
+sqlite3：用于操作 SQLite 数据库。
+dotenv：用于加载环境变量。
+dotenv-cli：在命令行中使用 .env 文件的工具。
+sequelize：用于操作数据库的 ORM 库。
+sequelize-cli：提供管理 Sequelize 数据库的命令行工具。
+
+关于sequelize创建数据库：
+执行 Sequelize 的数据库迁移操作，同时利用 dotenv 加载环境变量：npx dotenv sequelize db:migrate
+
+
+关于sequelize-cli 执行各种数据库管理操作：
+初始化项目：npx sequelize-cli init
+生成迁移文件：npx sequelize-cli migration:generate --name create-user
+执行迁移：npx sequelize-cli db:migrate
+回滚迁移：npx dotenv sequelize-cli db:migrate:undo # rollback one migration npx
+回滚全部迁移：dotenv sequelize-cli db:migrate:undo:all # rollback all migrations
+生成种子文件：npx sequelize-cli seed:generate --name demo-user
+执行种子数据：npx sequelize-cli db:seed:all
+回滚种子：npx dotenv sequelize-cli db:seed:undo # rollback one seed npx
+回滚全部种子：dotenv sequelize-cli db:seed:undo:all # rollback all seeds
+

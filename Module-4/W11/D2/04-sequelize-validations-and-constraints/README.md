@@ -8,6 +8,7 @@ will also be writing some intermediate and custom validations.
 
 Download starter. 
 
+
 Execute the __setup-commands.sh__ script from the root directory of this
 practice. View the contents of the script to see the commands that are executed,
 and view the results in the terminal to confirm that setup was successful.
