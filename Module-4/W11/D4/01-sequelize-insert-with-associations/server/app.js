@@ -16,11 +16,60 @@ app.use(express.json());
 // STEP 1: Creating from an associated model (One-to-Many)
 app.post('/bands/:bandId/musicians', async (req, res, next) => {
     // Your code here 
+    try {
+        const { bandId } = req.params;  
+        const { firstName, lastName } = req.body;  
+
+        if (!firstName || !lastName) {
+            return res.status(400).json({ message: 'Both firstName and lastName are required.' });
+        }
+
+        const band = await Band.findByPk(bandId);  
+
+        if (!band) {
+            return res.status(404).json({ message: 'Band not found.' });
+        }
+
+       
+        const musician = await band.createMusician({ firstName, lastName });
+
+        res.status(201).json({
+            message: `Created new musician for band ${band.name}.`,
+            musician
+        });
+    } catch (error) {
+        next(error);  
+    }
 })
 
 // STEP 2: Connecting two existing records (Many-to-Many)
 app.post('/musicians/:musicianId/instruments', async (req, res, next) => {
     // Your code here 
+    try {
+        const { musicianId } = req.params;  
+        const { instrumentIds } = req.body;  
+
+        if (!Array.isArray(instrumentIds) || instrumentIds.some(id => typeof id !== 'number')) {
+            return res.status(400).json({ message: 'instrumentIds must be an array of integers.' });
+        }
+
+        const musician = await Musician.findByPk(musicianId);  
+
+        if (!musician) {
+            return res.status(404).json({ message: 'Musician not found.' });
+        }
+
+      
+        await musician.addInstruments(instrumentIds);
+
+        res.status(200).json({
+            message: `Associated ${musician.firstName} with instruments ${instrumentIds.join(',')}.`
+        });
+    } catch (error) {
+        next(error);  
+    }
+
+
 })
 
 
