@@ -23,13 +23,13 @@
 ----------
 -- Query:
 -- SELECT "before creating index";
--- EXPLAIN QUERY PLAN
--- SELECT * FROM cats
--- JOIN cat_toys
--- ON cats.id = cat_toys.cat_id
--- JOIN toys
--- ON toys.id = cat_toys.toy_id
--- WHERE cat_toys.toy_id = 5;
+EXPLAIN QUERY PLAN
+SELECT * FROM cats
+JOIN cat_toys
+ON cats.id = cat_toys.cat_id
+JOIN toys
+ON toys.id = cat_toys.toy_id
+WHERE cat_toys.toy_id = 5;
 
 -- Paste your results below (as a comment):
 -- QUERY PLAN
@@ -112,21 +112,21 @@
 ----------
 -- Query (to be used in the sqlite CLI):
 
-EXPLAIN QUERY PLAN
-SELECT * FROM cats
-JOIN cat_toys
-ON cats.id = cat_toys.cat_id
-JOIN toys
-ON toys.id = cat_toys.toy_id
-WHERE cat_toys.toy_id = 5;
+-- EXPLAIN QUERY PLAN
+-- SELECT * FROM cats
+-- JOIN cat_toys
+-- ON cats.id = cat_toys.cat_id
+-- JOIN toys
+-- ON toys.id = cat_toys.toy_id
+-- WHERE cat_toys.toy_id = 5;
 
 
-SELECT * FROM cats
-JOIN cat_toys
-ON cats.id = cat_toys.cat_id
-JOIN toys
-ON toys.id = cat_toys.toy_id
-WHERE cat_toys.toy_id = 5;
+-- SELECT * FROM cats
+-- JOIN cat_toys
+-- ON cats.id = cat_toys.cat_id
+-- JOIN toys
+-- ON toys.id = cat_toys.toy_id
+-- WHERE cat_toys.toy_id = 5;
 
 -- Paste your results below (as a comment):
 -- Run Time: real 0.002 user 0.000135 sys 0.000279
