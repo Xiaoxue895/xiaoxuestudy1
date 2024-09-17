@@ -39,11 +39,17 @@ app.get('/musicians', async (req, res, next) => {
     // End result: { where: { firstName: req.query.firstName } }
 
     // Your code here 
+    if (req.query.firstName) {
+        query.where.firstName = req.query.firstName;  // Exact match for first name
+    }
     
     // Add keys to the WHERE clause to match the lastName param, if it exists.
     // End result: { where: { lastName: req.query.lastName } }
     
     // Your code here 
+    if (req.query.lastName) {
+        query.where.lastName = req.query.lastName;  // Exact match for last name
+    }
 
 
     // STEP 2: WHERE clauses on the associated Band model
@@ -53,6 +59,12 @@ app.get('/musicians', async (req, res, next) => {
     // End result: { include: [{ model: Band, where: { name: req.query.bandName } }] }
 
     // Your code here 
+    if (req.query.bandName) {
+        query.include.push({
+            model: Band,  // Include Band model
+            where: { name: req.query.bandName }  // Exact match for band name
+        });
+    }
 
 
     // STEP 3: WHERE Clauses on the associated Instrument model 
@@ -71,6 +83,17 @@ app.get('/musicians', async (req, res, next) => {
     */
 
     // Your code here 
+    if (req.query.instrumentTypes) {
+        query.include.push({
+            model: Instrument,  // Include Instrument model
+            where: {
+                type: {
+                    [Op.in]: req.query.instrumentTypes  // Match any instrument type in the array
+                }
+            },
+            through: { attributes: [] }  // Exclude the join table attributes
+        });
+    }
 
 
     // BONUS STEP 4: Specify Musician attributes to be returned
@@ -83,6 +106,13 @@ app.get('/musicians', async (req, res, next) => {
     // If any other attributes are provided, only include those values
 
     // Your code here 
+    if (req.query.musicianFields) {
+        if (req.query.musicianFields.includes('none')) {
+            query.attributes = [];  
+        } else if (!req.query.musicianFields.includes('all')) {
+            query.attributes = req.query.musicianFields;  
+        }
+    }
 
 
     // BONUS STEP 5: Specify attributes to be returned
@@ -104,6 +134,24 @@ app.get('/musicians', async (req, res, next) => {
             }]
         }
     */
+        if (req.query.bandFields) {
+            query.include = query.include.map(include => {
+                if (include.model === Band) {
+                    include.attributes = req.query.bandFields.includes('none') ? [] : req.query.bandFields;
+                }
+                return include;
+            });
+        }
+        
+        if (req.query.instrumentFields) {
+            query.include = query.include.map(include => {
+                if (include.model === Instrument) {
+                    include.attributes = req.query.instrumentFields.includes('none') ? [] : req.query.instrumentFields;
+                }
+                return include;
+            });
+        }
+        
 
 
     // BONUS STEP 6: Order Options
@@ -120,6 +168,16 @@ app.get('/musicians', async (req, res, next) => {
     // End result: { order: [['firstName', 'asc'], ['lastName'], ['createdAt', 'desc']] }
 
     // Your code here 
+
+    if (req.query.order) {
+        query.order = req.query.order.map(orderParam => {
+            const [attribute, direction] = orderParam.split(',');  
+            return [attribute, direction || 'ASC']; 
+        });
+    } else {
+        query.order = [['lastName', 'ASC'], ['firstName', 'ASC']];  
+    }
+    
 
 
     // Perform compiled query
