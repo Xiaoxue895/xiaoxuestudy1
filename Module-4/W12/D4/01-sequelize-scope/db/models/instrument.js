@@ -21,6 +21,24 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Instrument',
+    defaultScope: {
+      attributes: { exclude: ['createdAt', 'updatedAt'] }
+    },
+    scopes: {
+      keyboard: {
+        where: { type: 'keyboard' }
+      },
+      string: {
+        where: { type: 'string' }
+      },
+      woodwind: {
+        where: { type: 'woodwind' }
+      },
+      byStoreId: (storeId) => ({
+        where: { storeId },
+        order: [['name', 'ASC']]
+      })
+    }
   });
   return Instrument;
 };
