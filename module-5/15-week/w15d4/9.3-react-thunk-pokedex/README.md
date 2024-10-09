@@ -1,27 +1,23 @@
-# Pokedex, Part 2: Thunks
+# Pokedex Thunk
 
-In today's project you will complete your Pokedex application by configuring an
-existing frontend application to use thunk actions.
+In today's project you will configure an existing application to use thunk
+actions.
 
 ## Phase 0: Getting started
 
-You'll want to have your Pokedex backend from Part 1 up and running. (You can
-download the Part 1 solution [here].) Unzip the solution, `cd` into the root
-directory, and run the following commands to boot it up:
+You'll need the backend for the Pokedex application. Take a moment to clone it
+from
+<https://github.com/appacademy/aa15-pokedex-express-backend>.
+Follow the instructions in the backend repo's README to set up the backend
+server. Start the backend server by running `npm start`.
 
-* `bundle install`
-* `rails db:create db:migrate db:seed`
-* `rails s`
-
-The backend API is also documented in the solution's __Pokedex-API.md__ file.
+The API for the backend is also documented in that repository's README.
 
 Once you have the backend up and running, clone the frontend starter from the
 `Download` link at the bottom of this page.
 
-Run `npm install` and `npm run dev` in the frontend starter repo to start your
-frontend development server.
-
-[here]: https://appacademy-open-assets.s3.us-west-1.amazonaws.com/modular-curriculum-practices/YWEtcmVhY3QtcG9rZWRleC1yYWlscy1iYWNrZW5kLWNo.zip
+Run `npm run dev` in the frontend starter repo to start your frontend
+development server.
 
 ### Explore the reference application
 
@@ -64,6 +60,9 @@ server: {
 
 These lines tell the development server to proxy any requests beginning with
 `/api` or `/images` to your backend server port.
+
+**Always ensure that the `PORT` variable in your backend __.env__ file has the
+same port number as the proxy setting in your frontend __vite.config.js__.**
 
 You will make api calls from your frontend to your backend server. When making
 api calls to your backend, don't write out your base URL for every call.

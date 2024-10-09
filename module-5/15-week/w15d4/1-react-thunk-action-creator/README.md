@@ -8,10 +8,15 @@ with Redux.
 Clone the starter repo accessible from the `Download Project` button at the
 bottom of this page.
 
-1. In the terminal, `cd` into the __backend-rails__ directory.
-2. Install dependencies with `bundle install`.
-3. Run `rails db:setup` to set up the database.
-4. Run `rails s` to start the backend server listening on port 5000.
+1. In the terminal, `cd` into the __backend-express__ directory of the starter.
+2. Install dependencies with `npm install`.
+3. Copy the **.env.example** file to a new file in the same location called
+   **.env**.
+   * The server should be listening for requests on port `5000`.
+   * The SQLite3 database file should be **db/dev.db**.
+4. Run
+   * `npm run db:setup` - create the database and tables and insert seed data
+   * `npm start` - start the backend server
 
 In a different terminal, `cd` into the __frontend__ directory of the starter.
 
