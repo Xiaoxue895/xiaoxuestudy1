@@ -5,7 +5,7 @@ import './SingleArticle.css';
 const SingleArticle = () => {
   const { id } = useParams();
   const singleArticle = useSelector(
-    state => state.articleState.entries.find(article => article.id === id)
+    state => state.articleState.entries.find(article => article.id === +id)
   )
 
   return (
@@ -23,3 +23,4 @@ const SingleArticle = () => {
 };
 
 export default SingleArticle;
+

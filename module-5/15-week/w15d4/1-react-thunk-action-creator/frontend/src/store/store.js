@@ -1,6 +1,8 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import fruitReducer from './fruitReducer';
 import articleReducer from './articleReducer';
+import thunk from 'redux-thunk';
+
 
 /*
 This is the most important part of this file. You will add your reducers here to
@@ -36,6 +38,7 @@ if (import.meta.env.MODE !== "production") {
   enhancer = composeEnhancers(applyMiddleware(logger));
 }
 
+
 /*
 `configureStore` is the variable you will use in your root `main.jsx` to give
 the Redux store access to the full application.
@@ -45,6 +48,20 @@ the Redux store access to the full application.
   from the server. (This is not important right now.)
 `enhancer`: see above.
 */
+
+
+if (import.meta.env.MODE !== "production") {
+  const logger = (await import("redux-logger")).default;
+  const composeEnhancers =
+    typeof window === "object" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+      ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({ trace: true })
+      : compose;
+  enhancer = composeEnhancers(applyMiddleware(thunk, logger));
+} else {
+  enhancer = applyMiddleware(thunk);
+}
+
+
 const configureStore = (preloadedState) => {
   return createStore(rootReducer, preloadedState, enhancer);
 };
