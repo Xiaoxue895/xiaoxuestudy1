@@ -3,6 +3,9 @@
 
 # Write your function here.
 
+def is_last_character_n(name):
+    return name[-1].lower() == 'n'
+
 
 print(is_last_character_n("Aiden"))  #> True
 print(is_last_character_n("Piet"))   #> False

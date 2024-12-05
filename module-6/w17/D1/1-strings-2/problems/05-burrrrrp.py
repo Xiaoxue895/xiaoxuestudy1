@@ -2,6 +2,9 @@
 
 # Write your function here.
 
+def long_burp(number):
+    return "B" + "r" * number + "p"
+
 
 print(long_burp(3))  #> "Burrrp"
 print(long_burp(5))  #> "Burrrrrp"

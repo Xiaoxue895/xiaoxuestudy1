@@ -5,6 +5,10 @@
 
 # Write your function here.
 
+def perfect_square(num1,num2):
+    return num1 == num2 ** 2
+
+
 
 print(perfect_square(15, 5)) #> False
 print(perfect_square(25, 5)) #> True

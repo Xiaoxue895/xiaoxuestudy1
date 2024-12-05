@@ -2,6 +2,8 @@
 # returns that string from the index of 3 to the end of the string.
 
 # Write your function here.
+def index_string(str):
+    return str[3:]
 
 
 print(index_string("Alchemy"))     #> hemy
